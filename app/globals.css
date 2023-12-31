@@ -12,3 +12,17 @@
       "Segoe UI", sans-serif;
   }
 }
+
+/* remove clerk watermark */
+.cl-internal-10b0tw4 {
+  display: none;
+}
+
+/* remove border and boxshadow in clerk sign-in */
+@media (max-width: 640px) {
+  .cl-internal-17ydaof {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

@@ -2,6 +2,7 @@ import "./globals.css";
 import React from "react";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -25,7 +26,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${figtree.variable} font-sans`}>
-        {children}
+        <ClerkProvider
+          appearance={{
+            elements: {
+              formButtonPrimary: "primary-gradient",
+              footerActionLink: "primary-text-gradient hover:text-primary-500",
+            },
+            variables: {
+              colorPrimary: "#ff7000",
+            },
+          }}
+        >
+          {children}
+        </ClerkProvider>
       </body>
     </html>
   );
