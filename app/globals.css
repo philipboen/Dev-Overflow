@@ -14,20 +14,43 @@
 }
 
 .max-container {
-    @apply mx-auto max-w-[1600px]; /* 1600px | 1440px */
-  }
+  @apply mx-auto max-w-[1600px]; /* 1600px | 1440px */
+}
 
-  .flexCenter {
-    @apply flex items-center justify-center;
-  }
+.flexCenter {
+  @apply flex items-center justify-center;
+}
 
-  .flexBetween {
-    @apply flex items-center justify-between;
-  }
+.flexBetween {
+  @apply flex items-center justify-between;
+}
 
-  .flexStart {
-    @apply flex items-center justify-start;
-  }
+.flexStart {
+  @apply flex items-center justify-start;
+}
+
+.no-focus {
+  @apply focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0 !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 50px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 /* remove clerk watermark */
 .cl-internal-10b0tw4 {

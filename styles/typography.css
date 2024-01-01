@@ -23,51 +23,51 @@
     @apply text-[20px] font-semibold leading-[24.8px];
   }
 
-  .base-medium {
+  .lg-medium {
     @apply text-[18px] font-medium leading-[25.2px];
   }
 
-  .base-semibold {
+  .lg-semibold {
     @apply text-[18px] font-semibold leading-[25.2px];
   }
 
-  .base-bold {
+  .lg-bold {
     @apply text-[18px] font-bold leading-[140%];
   }
 
-  .paragraph-regular {
+  .base-regular {
     @apply text-[16px] font-normal leading-[22.4px];
   }
 
-  .paragraph-medium {
+  .base-medium {
     @apply text-[16px] font-medium leading-[22.4px];
   }
 
-  .paragraph-semibold {
+  .base-semibold {
     @apply text-[16px] font-semibold leading-[20.8px];
   }
 
-  .body-regular {
+  .sm-regular {
     @apply text-[14px] font-normal leading-[19.6px];
   }
 
-  .body-medium {
+  .sm-medium {
     @apply text-[14px] font-medium leading-[18.2px];
   }
 
-  .body-semibold {
+  .sm-semibold {
     @apply text-[14px] font-semibold leading-[18.2px];
   }
 
-  .small-regular {
+  .xs-regular {
     @apply text-[12px] font-normal leading-[15.6px];
   }
 
-  .small-medium {
+  .xs-medium {
     @apply text-[12px] font-medium leading-[15.6px];
   }
 
-  .small-semibold {
+  .xs-semibold {
     @apply text-[12px] font-semibold leading-[15.6px];
   }
 
