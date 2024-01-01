@@ -1,12 +1,20 @@
 import "./globals.css";
 import React from "react";
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+// eslint-disable-next-line camelcase
+import { Figtree, Space_Grotesk } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@/context/ThemeProvider";
 
 const figtree = Figtree({
   subsets: ["latin"],
   variable: "--font-figtree",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-spaceGrotesk",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +33,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${figtree.variable} font-sans`}>
+      <body
+        className={`${spaceGrotesk.variable} ${figtree.variable} font-sans`}
+      >
         <ClerkProvider
           appearance={{
             elements: {
@@ -37,7 +47,7 @@ export default function RootLayout({
             },
           }}
         >
-          {children}
+          <ThemeProvider>{children}</ThemeProvider>
         </ClerkProvider>
       </body>
     </html>
