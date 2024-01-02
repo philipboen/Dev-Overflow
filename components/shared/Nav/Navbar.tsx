@@ -20,14 +20,14 @@ const Navbar = () => {
         </h2>
       </Link>
       {/* <div>Global Search</div> */}
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-4">
         <Theme />
         <SignedIn>
           <UserButton
             afterSignOutUrl="/"
             appearance={{
               elements: {
-                avatarBox: "h-10 w-10",
+                avatarBox: "h-10 w-10 max-sm:h-8 max-sm:w-8",
               },
               variables: {
                 colorPrimary: "#FF7000",
