@@ -32,7 +32,7 @@ const NavContent = () => {
                 isActive
                   ? "primary-gradient rounded-[10px] text-light-800"
                   : "text-dark300_light800"
-              } flex items-center justify-start gap-4 bg-transparent px-4 py-2`}
+              } flex items-center justify-start gap-4 bg-transparent p-4`}
             >
               <Image
                 src={item.imgURL}
@@ -84,7 +84,7 @@ const MobileNav = () => {
           </h2>
         </Link>
 
-        <div className="mt-4">
+        <div className="mt-6">
           <NavContent />
           <div className="mt-6">
             <SignedOut>
