@@ -43,7 +43,7 @@ const NavContent = () => {
               />
               <p
                 className={`${
-                  isActive ? "sm-semibold" : "sm-medium"
+                  isActive ? "base-semibold" : "base-medium"
                 } font-serif`}
               >
                 {item.label}
