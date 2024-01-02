@@ -30,9 +30,9 @@ const NavContent = () => {
               href={item.route}
               className={`${
                 isActive
-                  ? "primary-gradient rounded-[10px] text-light-900"
-                  : "text-dark300_light900"
-              } flex items-center justify-start gap-4 bg-transparent p-4`}
+                  ? "primary-gradient rounded-[10px] text-light-800"
+                  : "text-dark300_light800"
+              } flex items-center justify-start gap-4 bg-transparent px-4 py-2`}
             >
               <Image
                 src={item.imgURL}
@@ -43,7 +43,7 @@ const NavContent = () => {
               />
               <p
                 className={`${
-                  isActive ? "base-semibold" : "base-medium"
+                  isActive ? "sm-semibold" : "sm-medium"
                 } font-serif`}
               >
                 {item.label}
@@ -72,27 +72,25 @@ const MobileNav = () => {
         side="left"
         className="background-light900_dark200 border-none"
       >
-        <Link href="/" className="flex items-center gap-1">
+        <Link href="/" className="mt-2 flex items-center gap-1">
           <Image
             src="/assets/images/site-logo.svg"
             alt="Dev Overflow"
             width={24}
             height={24}
           />
-          <h2 className="h2-bold text-dark100_light900 font-spaceGrotesk">
+          <h2 className="h2-bold text-dark100_light800 font-spaceGrotesk">
             Dev <span className="text-primary-500">Overflow</span>
           </h2>
         </Link>
 
-        <div
-          className="pt-10"
-        >
+        <div className="mt-4">
           <NavContent />
           <div className="mt-6">
             <SignedOut>
               <div className="flex flex-col gap-3">
                 <Link href="/sign-in">
-                  <Button className="btn-secondary min-h-[41px] w-full rounded-[10px] px-4 py-3 font-serif shadow-none">
+                  <Button className="btn-secondary min-h-[41px] w-full rounded-[10px] px-4 py-[14px] font-serif shadow-none">
                     <span className="primary-text-gradient">Log In</span>
                   </Button>
                 </Link>
