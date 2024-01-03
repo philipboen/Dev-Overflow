@@ -20,7 +20,7 @@ const Navbar = () => {
         </h2>
       </Link>
       {/* <div>Global Search</div> */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         <Theme />
         <SignedIn>
           <UserButton
@@ -36,12 +36,20 @@ const Navbar = () => {
           />
         </SignedIn>
         <SignedOut>
-          <Link
-            href="/sign-in"
-            className="rounded-[10px] border border-dark-200 px-6 py-2 text-center font-serif font-medium outline-none hover:bg-light-800 max-sm:hidden dark:border-light-700 dark:hover:bg-dark-400 dark:hover:text-light-900"
-          >
-            Sign In
-          </Link>
+          <div className="flex gap-2 align-middle">
+            <Link
+              href="/sign-in"
+              className="rounded-[10px] px-4 py-2 text-center font-serif font-medium outline-none transition-all duration-100 hover:bg-light-700 max-sm:hidden dark:hover:bg-dark-400 dark:hover:text-light-900"
+            >
+              Log In
+            </Link>
+            <Link
+              href="/sign-up"
+              className="rounded-[10px] border border-dark-200 px-4 py-2 text-center font-serif font-medium outline-none transition-all duration-100 hover:bg-dark-200 hover:text-light-900 max-sm:hidden dark:border-light-700 dark:hover:bg-light-700 dark:hover:text-dark-400"
+            >
+              Create account
+            </Link>
+          </div>
         </SignedOut>
         <MobileNav />
       </div>
