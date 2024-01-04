@@ -6,7 +6,7 @@ import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   return (
-    <nav className="flexBetween background-light900_dark200 fixed z-50 w-full gap-4 px-4 py-6 shadow-light-300 sm:px-[48px] md:px-[70px] dark:shadow-none">
+    <nav className="flexBetween background-light900_dark200 fixed z-50 w-full gap-4 border-b px-4  py-6 shadow-light-300 sm:px-[48px] md:px-[70px] dark:border-b-0 dark:shadow-none">
       <Link href="/" className="flex items-center gap-1">
         <Image
           src="/assets/images/site-logo.svg"
@@ -27,7 +27,7 @@ const Navbar = () => {
             afterSignOutUrl="/"
             appearance={{
               elements: {
-                avatarBox: "h-10 w-10 max-sm:h-8 max-sm:w-8",
+                avatarBox: "h-8 w-8",
               },
               variables: {
                 colorPrimary: "#FF7000",
