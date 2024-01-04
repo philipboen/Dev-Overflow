@@ -67,6 +67,10 @@
     @apply invert dark:invert-0;
   }
 
+  .placeholder {
+    @apply placeholder:text-light-400 dark:placeholder:text-light-500;
+  }
+
   .text-dark100_light900 {
     @apply text-dark-100 dark:text-light-900 !important;
   }
