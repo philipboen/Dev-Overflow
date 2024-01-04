@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${figtree.variable} font-sans`}
+        className={`${spaceGrotesk.variable} ${figtree.variable} main-scrollbar font-sans`}
       >
         <ClerkProvider
           appearance={{

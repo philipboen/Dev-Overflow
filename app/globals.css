@@ -52,6 +52,23 @@
   background: #555;
 }
 
+.main-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 3px;
+}
+
+.main-scrollbar::-webkit-scrollbar-track {
+  @apply bg-[hsl(0,0%,80%)] dark:bg-[#424242];
+}
+
+.main-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-[#888] dark:bg-[#686868];
+}
+
+.main-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#686868] dark:bg-[hsl(0,0%,51%)];
+}
+
 /* remove clerk watermark */
 .cl-internal-10b0tw4 {
   display: none;
