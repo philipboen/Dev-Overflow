@@ -48,7 +48,7 @@ const QuestionCard = ({
       </div>
       <div className="mt-3.5 flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <Tag key={tag._id} _id={tag._id} name={tag.name} />
+          <Tag key={tag._id} _id={tag._id} name={tag.name} otherClasses="bg-slate-400"/>
         ))}
       </div>
       <div className="flexBetween mt-6 w-full flex-wrap gap-3">
