@@ -54,7 +54,7 @@ const questions = [
     ],
     author: {
       _id: "3",
-      name: "John Doe",
+      name: "Peter Smith",
       avatar: "/assets/images/avatars/avatar3.png",
     },
     upvotes: 14500,

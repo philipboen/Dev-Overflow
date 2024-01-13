@@ -30,11 +30,11 @@ const Metric = ({
         className={`object-contain ${href ? "rounded-full" : ""}`}
       />
 
-      <p className={`${textStyles} flex items-center gap-1`}>
+      <p className={`${textStyles} flex items-center gap-1 self-center`}>
         {value}
 
         <span
-          className={`xs-regular line-clamp-1 self-end ${
+          className={`xs-regular line-clamp-1 ${
             isAuthor ? "max-sm:hidden" : ""
           }`}
         >
@@ -46,13 +46,13 @@ const Metric = ({
 
   if (href) {
     return (
-      <Link href={href} className="flex items-end gap-1">
+      <Link href={href} className="flex items-center gap-1">
         {metricContent}
       </Link>
     );
   }
 
-  return <div className="flex items-end gap-1">{metricContent}</div>;
+  return <div className="flex items-center gap-1">{metricContent}</div>;
 };
 
 export default Metric;
