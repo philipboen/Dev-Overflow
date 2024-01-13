@@ -60,11 +60,11 @@
   }
 
   .xs-regular {
-    @apply text-[12px] font-normal leading-[15.6px];
+    @apply text-[12px] font-normal leading-none;
   }
 
   .xs-medium {
-    @apply text-[12px] font-medium leading-[15.6px];
+    @apply text-[12px] font-medium leading-none;
   }
 
   .xs-semibold {

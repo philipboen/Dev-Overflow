@@ -59,7 +59,7 @@ const QuestionCard = ({
           title={` - asked ${getTimestamp(createdAt)}`}
           href={`/profile/${author._id}`}
           isAuthor
-          textStyles="sm-medium text-dark400_light700"
+          textStyles="xs-medium text-dark400_light700"
         />
         <div className="flex gap-4">
           <Metric
