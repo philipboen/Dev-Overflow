@@ -39,7 +39,7 @@ const QuestionCard = ({
             {getTimestamp(createdAt)}
           </span>
           <Link href={`/question/${_id}`}>
-            <h3 className="sm:h3-semibold base-semibold text-dark200_light900 line-clamp-3 flex-1">
+            <h3 className="sm:h3-semibold base-semibold text-dark200_light870 line-clamp-3 flex-1">
               {title}
             </h3>
           </Link>
@@ -48,7 +48,12 @@ const QuestionCard = ({
       </div>
       <div className="mt-3.5 flex flex-wrap gap-2">
         {tags.map((tag) => (
-          <Tag key={tag._id} _id={tag._id} name={tag.name} otherClasses="bg-slate-400"/>
+          <Tag
+            key={tag._id}
+            _id={tag._id}
+            name={tag.name}
+            otherClasses="bg-slate-400"
+          />
         ))}
       </div>
       <div className="flexBetween mt-6 w-full flex-wrap gap-3">
@@ -59,7 +64,7 @@ const QuestionCard = ({
           title={` - asked ${getTimestamp(createdAt)}`}
           href={`/profile/${author._id}`}
           isAuthor
-          textStyles="xs-medium text-dark400_light700"
+          textStyles="xs-medium text-dark400_light600"
         />
         <div className="flex gap-4">
           <Metric
@@ -67,21 +72,21 @@ const QuestionCard = ({
             alt="upvotes"
             value={formatNumber(upvotes)}
             title="Votes"
-            textStyles="xs-medium text-dark400_light800"
+            textStyles="xs-medium text-dark400_light600"
           />
           <Metric
             imgUrl="/assets/icons/message.svg"
             alt="message"
             value={answers.length}
             title="Answers"
-            textStyles="xs-medium text-dark400_light800"
+            textStyles="xs-medium text-dark400_light600"
           />
           <Metric
             imgUrl="/assets/icons/eye.svg"
             alt="eye"
             value={formatNumber(views)}
             title="Views"
-            textStyles="xs-medium text-dark400_light800"
+            textStyles="xs-medium text-dark400_light600"
           />
         </div>
       </div>

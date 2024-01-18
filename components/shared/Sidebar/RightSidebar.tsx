@@ -52,7 +52,7 @@ const popularTags = [
 const RightSidebar = () => {
   return (
     <section className="background-light900_dark200 custom-scrollbar sticky right-0 top-0 flex h-screen max-w-[340px] flex-col justify-start overflow-y-auto overflow-x-hidden border-l border-light-400 px-4 pb-6 pl-6 pt-28 shadow-light-300 max-xl:hidden dark:border-dark-300 dark:shadow-none">
-      <h3 className="h3-bold text-dark200_light900 font-serif">
+      <h3 className="h3-bold text-dark200_light870 font-serif">
         Top Questions
       </h3>
       <div className="mt-7 flex w-full flex-col gap-[30px]">
@@ -74,7 +74,7 @@ const RightSidebar = () => {
         ))}
       </div>
       <div className="mt-10">
-        <h3 className="h3-bold text-dark200_light900 font-serif">
+        <h3 className="h3-bold text-dark200_light870 font-serif">
           Popular Tags
         </h3>
         <div className="mr-1 mt-4 flex flex-wrap gap-2">
