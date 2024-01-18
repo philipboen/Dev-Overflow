@@ -31,7 +31,7 @@
   }
 
   .card-wrapper {
-    @apply bg-light-820 dark:dark-gradient shadow-light-100 dark:shadow-dark-100;
+    @apply bg-light-820 dark:bg-dark-300 shadow-light-100 dark:shadow-none;
   }
 
   .no-focus {
