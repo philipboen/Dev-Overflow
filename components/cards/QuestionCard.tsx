@@ -39,7 +39,7 @@ const QuestionCard = ({
             {getTimestamp(createdAt)}
           </span>
           <Link href={`/question/${_id}`}>
-            <h3 className="sm:h3-semibold base-semibold text-dark200_light870 line-clamp-3 flex-1">
+            <h3 className="sm:h3-semibold base-semibold text-dark200_light870 max-sm:text-dark200_light600 line-clamp-3 flex-1">
               {title}
             </h3>
           </Link>
