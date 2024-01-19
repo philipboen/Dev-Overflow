@@ -169,7 +169,7 @@ const Question = () => {
                       ? "dark"
                       : "",
                     content_style:
-                      "body { font-family:Figtree,Helvetica,Arial,sans-serif; font-size:16px; line-height:28px; } @media (max-width: 640px) { body { font-size: 14px; } }",
+                      "body { font-family:Figtree,Helvetica,Arial,sans-serif; font-size:16px; line-height:28px; }",
                   }}
                 />
               </FormControl>
