@@ -90,13 +90,13 @@ const MobileNav = () => {
             <SignedOut>
               <div className="flex flex-col gap-3">
                 <Link href="/sign-in">
-                  <Button className="btn-secondary min-h-[41px] w-full rounded-[10px] px-4 py-[14px] font-serif shadow-none">
+                  <Button className="btn-secondary no-focus min-h-[41px] w-full rounded-[10px] px-4 py-[14px] font-serif shadow-none">
                     <span className="primary-text-gradient">Log In</span>
                   </Button>
                 </Link>
 
                 <Link href="/sign-up">
-                  <Button className="light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg px-4 py-3 font-serif shadow-none">
+                  <Button className="light-border-2 btn-tertiary text-dark400_light900 no-focus min-h-[41px] w-full rounded-lg px-4 py-3 font-serif shadow-none">
                     Sign up
                   </Button>
                 </Link>

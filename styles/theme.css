@@ -67,6 +67,10 @@
     @apply bg-light-800 dark:bg-dark-300 !important;
   }
 
+  .background-slate_dark300 {
+    @apply bg-slate-400 dark:bg-dark-300 !important;
+  }
+
   .invert-colors {
     @apply invert dark:invert-0;
   }
@@ -90,7 +94,7 @@
   .text-dark200_light870 {
     @apply text-dark-200 dark:text-light-870;
   }
-  
+
   .text-dark200_light600 {
     @apply text-dark-200 dark:text-light-600;
   }
@@ -102,11 +106,11 @@
   .text-dark300_light700 {
     @apply text-dark-300 dark:text-light-700;
   }
-  
+
   .text-dark300_light800 {
     @apply text-dark-300 dark:text-light-800 !important;
   }
-  
+
   .text-dark300_light900 {
     @apply text-dark-300 dark:text-light-900 !important;
   }
@@ -137,6 +141,10 @@
 
   .text-light400_light500 {
     @apply text-light-400 dark:text-light-500 !important;
+  }
+
+  .text-light900_light500 {
+    @apply text-light-900 dark:text-light-500 !important;
   }
 
   .text-dark400_light500 {
