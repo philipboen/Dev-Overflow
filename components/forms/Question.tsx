@@ -20,12 +20,20 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
+import { createQuestion } from "@/lib/actions/question.action";
+import { usePathname, useRouter } from "next/navigation";
 
 const type: any = "create";
 
-const Question = () => {
+interface Props {
+  mongoUserId: string;
+}
+
+const Question = ({ mongoUserId }: Props) => {
   const editorRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof QuestionsSchema>>({
@@ -38,14 +46,23 @@ const Question = () => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof QuestionsSchema>) {
+  async function onSubmit(values: z.infer<typeof QuestionsSchema>) {
     setIsSubmitting(true);
 
     try {
       // make an async call to your API -> create a new question
       // contain all form data
-      
+
+      await createQuestion({
+        title: values.title,
+        content: values.explanation,
+        tags: values.tags,
+        author: JSON.parse(mongoUserId),
+        path: pathname,
+      });
+
       // navigate to home page
+      router.push("/");
     } catch (error) {
       console.log(error);
     } finally {
@@ -159,15 +176,16 @@ const Question = () => {
                       "undo redo | blocks | " +
                       "codesample | bold italic forecolor | alignleft aligncenter " +
                       "alignright alignjustify | bullist numlist",
-                    skin: window.matchMedia("(prefers-color-scheme: dark)")
-                      .matches
-                      ? "oxide-dark"
-                      : "",
-                    content_css: window.matchMedia(
-                      "(prefers-color-scheme: dark)"
-                    ).matches
-                      ? "dark"
-                      : "",
+                    skin:
+                      typeof window !== "undefined" &&
+                      window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "oxide-dark"
+                        : "oxide",
+                    content_css:
+                      typeof window !== "undefined" &&
+                      window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "dark"
+                        : "default",
                     content_style:
                       "body { font-family:Figtree,Helvetica,Arial,sans-serif; font-size:16px; line-height:28px; }",
                   }}
@@ -203,7 +221,7 @@ const Question = () => {
                       {field.value.map((tag: any) => (
                         <Badge
                           key={tag}
-                          className="xs-medium max-sm:subtle-medium text-light900_light500 flex items-center justify-center gap-2 rounded-md border-none bg-slate-800 px-4 py-2 font-serif capitalize dark:bg-dark-300"
+                          className="xs-medium max-sm:subtle-medium text-light900_light500 flex items-center justify-center gap-2 rounded-md border-none bg-slate-800 px-4 py-2 font-serif dark:bg-dark-300"
                         >
                           {tag}
                           <Image
@@ -221,7 +239,7 @@ const Question = () => {
                 </>
               </FormControl>
               <FormDescription className="xs-regular mt-2.5 text-gray-600 dark:text-light-500">
-                Add up to 5 tags to describe what your question is about. Start
+                Add up to 4 tags to describe what your question is about. Start
                 typing to see suggestions.
               </FormDescription>
               <FormMessage className="xs-regular text-red-600" />
