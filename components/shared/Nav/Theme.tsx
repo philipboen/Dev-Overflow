@@ -17,14 +17,14 @@ const Theme = () => {
   return (
     <Menubar className="relative border-none bg-transparent shadow-none">
       <MenubarMenu>
-        <MenubarTrigger className="cursor-pointer p-0 px-2 focus:bg-light-900 data-[state=open]:bg-light-900 dark:focus:bg-dark-200 dark:data-[state=open]:bg-dark-200">
+        <MenubarTrigger className="cursor-pointer p-0 px-2 focus:bg-light-900 data-[state=open]:bg-light-900 max-sm:p-0 dark:focus:bg-dark-200 dark:data-[state=open]:bg-dark-200">
           {mode === "light" ? (
             <Image
               src="/assets/icons/sun.svg"
               alt="sun"
               width={20}
               height={20}
-              className="active-theme"
+              className="active-theme max-sm:w-[16px]"
             />
           ) : (
             <Image
@@ -32,7 +32,7 @@ const Theme = () => {
               alt="moon"
               width={20}
               height={20}
-              className="active-theme"
+              className="active-theme max-sm:w-[16px]"
             />
           )}
         </MenubarTrigger>
