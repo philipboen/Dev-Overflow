@@ -205,7 +205,7 @@ const Question = ({ mongoUserId }: Props) => {
           name="tags"
           render={({ field }) => (
             <FormItem className="flex w-full flex-col">
-              <FormLabel className="base-semibold text-dark400_light800 font-serif">
+              <FormLabel className="base-semibold text-dark400_light800 max-sm:text-dark400_light600 font-serif">
                 Tags <span className="text-primary-500">*</span>
               </FormLabel>
               <FormControl className="mt-3.5">

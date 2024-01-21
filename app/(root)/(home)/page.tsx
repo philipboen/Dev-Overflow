@@ -14,9 +14,9 @@ export default async function Home() {
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 max-sm:px-4 sm:flex-row sm:items-center">
-        <h1 className="h1-bold text-dark300_light870">All Questions</h1>
+        <h1 className="h1-bold text-dark300_light870 font-serif">All Questions</h1>
         <Link href="/ask-question" className="flex justify-end max-sm:w-full">
-          <Button className="primary-gradient !text-light-900">
+          <Button className="primary-gradient font-serif !text-light-900">
             Ask a Question
           </Button>
         </Link>
