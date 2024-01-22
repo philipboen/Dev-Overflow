@@ -64,6 +64,6 @@ const config: Config = {
       '2xl': '1600px',
     }
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 }
 export default config
