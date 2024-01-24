@@ -8,7 +8,7 @@ interface TagProps {
   totalQuestions?: number;
   showCount?: boolean;
   otherClasses?: string;
-  textStyles?: string;
+  textStyles: string;
 }
 
 const Tag = ({
@@ -22,13 +22,11 @@ const Tag = ({
   return (
     <Link href={`/tags/${_id}`}>
       <Badge
-        className={`xs-medium flex-1 gap-2 bg-slate-800 ${otherClasses} px-3 py-[6px] dark:bg-dark-400`}
+        className={`xs-medium flex-1 gap-2 bg-[#FAFAFA] ${otherClasses} px-3 py-[6px] dark:bg-dark-400`}
       >
-        <p className={`${textStyles} dark:text-light-500`}>
-          {name}
-        </p>
+        <p className={`${textStyles} dark:text-light-500`}>{name}</p>
         {showCount && (
-          <p className="xs-medium leading-none text-light-700 dark:text-light-700">
+          <p className="xs-medium leading-none text-gray-500 dark:text-light-700">
             {formatNumber(totalQuestions || 0)}
           </p>
         )}
