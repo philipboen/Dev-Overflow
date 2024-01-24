@@ -85,6 +85,7 @@ const RightSidebar = () => {
               name={tag.name}
               totalQuestions={tag.totalQuestions}
               showCount
+              textStyles="text-light-900"
             />
           ))}
         </div>

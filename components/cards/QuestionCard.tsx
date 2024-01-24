@@ -53,7 +53,7 @@ const QuestionCard = ({
             _id={tag._id}
             name={tag.name}
             otherClasses="bg-[#FAFAFA] border-[#888] dark:border-none"
-            textStyles="!text-gray-500"
+            textStyles="text-gray-500"
           />
         ))}
       </div>
