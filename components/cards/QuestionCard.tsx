@@ -52,7 +52,7 @@ const QuestionCard = ({
             key={tag._id}
             _id={tag._id}
             name={tag.name}
-            otherClasses="bg-[#FAFAFA] border-[#888] dark:border-none"
+            otherClasses="border-[#888] dark:border-none"
             textStyles="text-gray-500"
           />
         ))}
