@@ -24,7 +24,7 @@ const Tag = ({
       <Badge
         className={`xs-medium flex-1 gap-2 bg-slate-800 ${otherClasses} px-3 py-[6px] dark:bg-dark-400`}
       >
-        <p className={`!text-light-900 ${textStyles} dark:text-light-500`}>
+        <p className={`${textStyles} dark:text-light-500`}>
           {name}
         </p>
         {showCount && (
