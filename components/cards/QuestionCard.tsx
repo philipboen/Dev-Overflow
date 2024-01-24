@@ -52,7 +52,8 @@ const QuestionCard = ({
             key={tag._id}
             _id={tag._id}
             name={tag.name}
-            otherClasses="bg-slate-400"
+            otherClasses="bg-[#FAFAFA] border-[#888] dark:border-none"
+            textStyles="text-dark-400"
           />
         ))}
       </div>
