@@ -22,6 +22,7 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { createQuestion } from "@/lib/actions/question.action";
 import { usePathname, useRouter } from "next/navigation";
+import { useTheme } from "@/context/ThemeProvider";
 
 const type: any = "create";
 
@@ -31,6 +32,7 @@ interface Props {
 
 const Question = ({ mongoUserId }: Props) => {
   const editorRef = useRef(null);
+  const { mode } = useTheme()
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -176,16 +178,8 @@ const Question = ({ mongoUserId }: Props) => {
                       "undo redo | blocks | " +
                       "codesample | bold italic forecolor | alignleft aligncenter " +
                       "alignright alignjustify | bullist numlist",
-                    skin:
-                      typeof window !== "undefined" &&
-                      window.matchMedia("(prefers-color-scheme: dark)").matches
-                        ? "oxide-dark"
-                        : "oxide",
-                    content_css:
-                      typeof window !== "undefined" &&
-                      window.matchMedia("(prefers-color-scheme: dark)").matches
-                        ? "dark"
-                        : "default",
+                    skin: mode === "dark" ? "oxide-dark" : "oxide",
+                    content_css: mode === "dark" ? "dark" : "light",
                     content_style:
                       "body { font-family:Figtree,Helvetica,Arial,sans-serif; font-size:16px; line-height:28px; }",
                   }}
