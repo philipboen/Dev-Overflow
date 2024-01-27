@@ -36,7 +36,7 @@ const Theme = () => {
             />
           )}
         </MenubarTrigger>
-        <MenubarContent className="mt-3 min-w-[140px] rounded border bg-light-900 py-2 max-sm:-ml-4 max-sm:min-w-[120px] dark:border-dark-400 dark:bg-dark-300">
+        <MenubarContent className="-ml-8 mt-3 min-w-[125px] rounded border bg-light-900 py-2 max-sm:-ml-10 max-sm:min-w-[120px] dark:border-dark-400 dark:bg-dark-300">
           {themes.map((item) => (
             <MenubarItem
               key={item.value}
