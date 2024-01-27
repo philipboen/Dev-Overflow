@@ -20,7 +20,7 @@ const LocalSearch = ({
 }: LocalSearchProps) => {
   return (
     <div
-      className={`background-light800_darkgradient flex min-h-[50px] grow items-center gap-4 rounded-[10px] px-4 ${otherClasses}`}
+      className={`background-light800_darkgradient flex min-h-[50px] grow items-center gap-4 rounded-[10px] border border-[#888] px-4 dark:border-dark-400 ${otherClasses}`}
     >
       {iconPosition === "left" && (
         <Image
@@ -35,9 +35,8 @@ const LocalSearch = ({
       <Input
         type="text"
         placeholder={placeholder}
-        value=""
         onChange={() => {}}
-        className="base-regular no-focus placeholder text-dark400_light700 border-none bg-transparent shadow-none outline-none"
+        className="sm-regular max-sm:base-regular no-focus placeholder text-dark400_light700 border-none bg-transparent shadow-none outline-none"
       />
 
       {iconPosition === "right" && (
