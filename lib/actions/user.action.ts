@@ -2,6 +2,9 @@
 
 import User from "@/models/user.model";
 import { connectToDatabase } from "../dbconnect";
+import { CreateUserParams, DeleteUserParams, UpdateUserParams } from "../shared.types";
+import { revalidatePath } from "next/cache";
+import Question from "@/models/question.model";
 
 export async function getUserById(params: any) {
     try {
@@ -17,19 +20,64 @@ export async function getUserById(params: any) {
     }
 }
 
-// Note: This is a dummy user model for MongoDB
-// {
-//     "_id": { "$oid": "65abb5cd44316ef0e3082537" },
-//     "clerkId": "b47e3082536",
-//     "name": "John Smith",
-//     "username": "johnsmith",
-//     "email": "johnsmith@gmail.com",
-//     "password": "5abb47c44",
-//     "bio": "This is a dummy user",
-//     "profilePicture": "https://example.com/dummyuser.jpg",
-//     "location": "Nairobi, Kenya",
-//     "portfolioWebsite": "https://dummywebsite.com",
-//     "reputation": { "$numberInt": "0" },
-//     "saved": [],
-//     "joinedAt": "2022-01-01T00:00:00.000Z"
-// }
+export async function createUser(userData: CreateUserParams) {
+    try {
+        connectToDatabase()
+
+        const newUser = await User.create(userData)
+
+        return newUser
+    }
+    catch (error) {
+        console.log(error)
+        throw error
+    }
+}
+
+export async function updateUser(params: UpdateUserParams) {
+    try {
+        connectToDatabase()
+
+        const { clerkId, updateData, path } = params
+
+        await User.findOneAndUpdate({ clerkId }, updateData, { new: true })
+
+        revalidatePath(path)
+    }
+    catch (error) {
+        console.log(error)
+        throw error
+    }
+}
+export async function deleteUser(params: DeleteUserParams) {
+    try {
+        connectToDatabase()
+
+        const { clerkId } = params
+
+        const user = await User.findOneAndDelete({ clerkId })
+
+        if (!user) {
+            throw new Error("User not found")
+        }
+
+        // Delete user and their action's from database
+        // i.e questions, answers, comments, etc
+
+        // get user question ids
+        // const userQuestionIds = await Question.find({ author: user._id }).distinct("_id")
+
+        // delete user questions
+        await Question.deleteMany({ author: user._id })
+
+        // TODO: delete user answers, comments, etc
+
+        const deletedUser = await User.findByIdAndDelete(user._id)
+
+        return deletedUser
+    }
+    catch (error) {
+        console.log(error)
+        throw error
+    }
+}
