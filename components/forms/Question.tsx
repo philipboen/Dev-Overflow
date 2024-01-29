@@ -32,7 +32,7 @@ interface Props {
 
 const Question = ({ mongoUserId }: Props) => {
   const editorRef = useRef(null);
-  const { mode } = useTheme()
+  const { mode } = useTheme();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -123,7 +123,7 @@ const Question = ({ mongoUserId }: Props) => {
               <FormControl className="mt-3.5">
                 <Input
                   {...field}
-                  className="no-focus base-regular background-light800_dark300 light-border-2 text-dark300_light700 min-h-[50px] border pl-4"
+                  className="no-focus base-regular background-light800_dark300 dark:light-border-2 text-dark300_light700 min-h-[50px] border border-[#888] pl-4"
                 />
               </FormControl>
               <FormDescription className="xs-regular mt-2.5 text-gray-600 dark:text-light-500">
@@ -179,7 +179,7 @@ const Question = ({ mongoUserId }: Props) => {
                       "codesample | bold italic forecolor | alignleft aligncenter " +
                       "alignright alignjustify | bullist numlist",
                     skin: mode === "dark" ? "oxide-dark" : "oxide",
-                    content_css: mode === "dark" ? "dark" : "light",
+                    content_css: mode === "dark" ? "dark" : "default",
                     content_style:
                       "body { font-family:Figtree,Helvetica,Arial,sans-serif; font-size:16px; line-height:28px; }",
                   }}
@@ -205,7 +205,7 @@ const Question = ({ mongoUserId }: Props) => {
               <FormControl className="mt-3.5">
                 <>
                   <Input
-                    className="no-focus base-regular background-light800_dark300 light-border-2 text-dark300_light700 min-h-[50px] border pl-4"
+                    className="no-focus base-regular background-light800_dark300 dark:light-border-2 text-dark300_light700 min-h-[50px] border border-[#888] pl-4"
                     placeholder="Add tags..."
                     onKeyDown={(e) => handleInputKeyDown(e, field)}
                   />
