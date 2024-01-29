@@ -14,7 +14,7 @@ interface Props {
 const UserCard = async ({ user }: Props) => {
   return (
     <Link href={`/profile/${user.clerkId}`}>
-      <article className="card-wrapper light-border flex min-w-[200px] flex-row items-center gap-5 rounded-2xl border p-4 max-sm:rounded-[10px] sm:gap-2.5">
+      <article className="card-wrapper light-border flex min-w-[200px] flex-row items-center gap-5 rounded-2xl border p-4 max-sm:rounded-[10px] sm:gap-2.5 dark:hover:bg-dark-400/80">
         <Image
           src={user.profilePicture}
           alt="User Profile Picture"
