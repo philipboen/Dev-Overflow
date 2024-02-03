@@ -9,7 +9,7 @@ interface Props {
   linkTitle: string;
 }
 
-const NoQuestionsFound = ({ title, description, link, linkTitle }: Props) => {
+const NotFound = ({ title, description, link, linkTitle }: Props) => {
   return (
     <div className="mt-8 flex w-full flex-col items-center justify-center px-4">
       <Image
@@ -40,4 +40,4 @@ const NoQuestionsFound = ({ title, description, link, linkTitle }: Props) => {
   );
 };
 
-export default NoQuestionsFound;
+export default NotFound;
