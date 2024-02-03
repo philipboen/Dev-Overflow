@@ -2,7 +2,8 @@
 
 import User from "@/models/user.model"
 import { connectToDatabase } from "../dbconnect"
-import { GetTopInteractedTagsParams } from "../shared.types"
+import { GetAllTagsParams, GetTopInteractedTagsParams } from "../shared.types"
+import Tag from "@/models/tag.model"
 
 
 export async function getTopInteractedTags(params: GetTopInteractedTagsParams) {
@@ -19,6 +20,20 @@ export async function getTopInteractedTags(params: GetTopInteractedTagsParams) {
         // Interaction Model in the database
 
         return [{ _id: '1', name: 'React' }, { _id: '2', name: 'Nodejs' }, { _id: '3', name: 'Next.js' }]
+    }
+    catch (error) {
+        console.log(error)
+        throw error
+    }
+}
+
+export async function getAllTags(params: GetAllTagsParams) {
+    try {
+        connectToDatabase()
+
+        const tags = await Tag.find({})
+
+        return { tags }
     }
     catch (error) {
         console.log(error)

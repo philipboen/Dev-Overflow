@@ -1,7 +1,7 @@
 import HomeFilters from "@/components/HomeFilters";
 import QuestionCard from "@/components/cards/QuestionCard";
 import Filter from "@/components/shared/Filter";
-import NoQuestionsFound from "@/components/shared/NoQuestionsFound";
+import NotFound from "@/components/shared/NotFound";
 import LocalSearch from "@/components/shared/Search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
@@ -54,7 +54,7 @@ export default async function Home() {
             />
           ))
         ) : (
-          <NoQuestionsFound
+          <NotFound
             title="There's no questions to show"
             description="Be the first to break the silence! 🚀 Ask a Question and kickstart the
         discussion. Your query could be the next big thing others learn from. Get
