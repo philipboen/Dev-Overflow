@@ -174,6 +174,27 @@ const Question = ({ mongoUserId }: Props) => {
                       "media",
                       "table",
                     ],
+                    codesample_languages: [
+                      { text: "html/xml", value: "markup" },
+                      { text: "css", value: "css" },
+                      { text: "javascript", value: "javascript" },
+                      { text: "jsx", value: "jsx" },
+                      { text: "typescrpt", value: "typescript" },
+                      { text: "tsx", value: "tsx" },
+                      { text: "php", value: "php" },
+                      { text: "json", value: "json" },
+                      { text: "sql", value: "sql" },
+                      { text: "python", value: "python" },
+                      { text: "java", value: "java" },
+                      { text: "c", value: "c" },
+                      { text: "c++", value: "cpp" },
+                      { text: "c#", value: "csharp" },
+                      { text: "VB.NET", value: "vbnet" },
+                      { text: "ruby", value: "ruby" },
+                      { text: "rust", value: "rust" },
+                      { text: "yaml", value: "yaml" },
+                      { text: "bash", value: "bash" },
+                    ],
                     toolbar:
                       "undo redo | blocks | " +
                       "codesample | bold italic forecolor | alignleft aligncenter " +
