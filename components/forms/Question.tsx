@@ -24,6 +24,7 @@ import { createQuestion } from "@/lib/actions/question.action";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { getActualTheme } from "@/lib/utils";
+import { TINY_CSS_CLASSES } from "@/constants";
 
 const type: any = "create";
 
@@ -204,8 +205,8 @@ const Question = ({ mongoUserId }: Props) => {
                       "alignright alignjustify | bullist numlist",
                     skin: actualTheme === "dark" ? "oxide-dark" : "oxide",
                     content_css: actualTheme === "dark" ? "dark" : "default",
-                    content_style:
-                      "body { font-family:Figtree,Helvetica,Arial,sans-serif; font-size:16px; line-height:28px; }",
+                    content_style: TINY_CSS_CLASSES,
+                    highlight_on_focus: false,
                   }}
                 />
               </FormControl>

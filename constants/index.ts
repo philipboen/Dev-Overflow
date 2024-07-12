@@ -71,3 +71,29 @@ export const BADGE_CRITERIA = {
         GOLD: 100000,
     },
 };
+
+export const TINY_CSS_CLASSES = `
+body {
+  font-family: Figtree, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+}
+body::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+`;
