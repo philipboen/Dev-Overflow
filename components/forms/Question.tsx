@@ -22,7 +22,8 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { createQuestion } from "@/lib/actions/question.action";
 import { usePathname, useRouter } from "next/navigation";
-import { useTheme } from "@/context/ThemeProvider";
+import { useTheme } from "next-themes";
+import { getActualTheme } from "@/lib/utils";
 
 const type: any = "create";
 
@@ -32,7 +33,8 @@ interface Props {
 
 const Question = ({ mongoUserId }: Props) => {
   const editorRef = useRef(null);
-  const { mode } = useTheme();
+  const { theme } = useTheme();
+  const actualTheme = getActualTheme(theme || "light");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -146,6 +148,7 @@ const Question = ({ mongoUserId }: Props) => {
               </FormLabel>
               <FormControl className="mt-3.5">
                 <Editor
+                  key={actualTheme}
                   apiKey={process.env.NEXT_PUBLIC_TINY_EDITOR_API_KEY}
                   onInit={(evt, editor) => {
                     // @ts-ignore
@@ -199,8 +202,8 @@ const Question = ({ mongoUserId }: Props) => {
                       "undo redo | blocks | " +
                       "codesample | bold italic forecolor | alignleft aligncenter " +
                       "alignright alignjustify | bullist numlist",
-                    skin: mode === "dark" ? "oxide-dark" : "oxide",
-                    content_css: mode === "dark" ? "dark" : "default",
+                    skin: actualTheme === "dark" ? "oxide-dark" : "oxide",
+                    content_css: actualTheme === "dark" ? "dark" : "default",
                     content_style:
                       "body { font-family:Figtree,Helvetica,Arial,sans-serif; font-size:16px; line-height:28px; }",
                   }}

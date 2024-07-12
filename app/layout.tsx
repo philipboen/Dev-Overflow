@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 // eslint-disable-next-line camelcase
 import { Figtree, Space_Grotesk } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
-import { ThemeProvider } from "@/context/ThemeProvider";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -47,7 +47,14 @@ export default function RootLayout({
             },
           }}
         >
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
         </ClerkProvider>
       </body>
     </html>
