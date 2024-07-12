@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -14,7 +15,11 @@ import { sidebarLinks } from "@/constants";
 import { SignedOut } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 
-const NavContent = () => {
+interface NavContentProps {
+  closeSheet: () => void;
+}
+
+const NavContent = ({ closeSheet }: NavContentProps) => {
   const pathname = usePathname();
 
   return (
@@ -25,7 +30,7 @@ const NavContent = () => {
           pathname === item.route;
 
         return (
-          <div key={item.route}>
+          <div key={item.route} onClick={closeSheet}>
             <Link
               href={item.route}
               className={`${
@@ -57,9 +62,14 @@ const NavContent = () => {
 };
 
 const MobileNav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSheet = () => setIsOpen((prev) => !prev);
+  const closeSheet = () => setIsOpen(false);
+
   return (
-    <Sheet>
-      <SheetTrigger asChild>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger asChild onClick={toggleSheet}>
         <Image
           src="/assets/icons/hamburger.svg"
           alt="menu"
@@ -85,7 +95,7 @@ const MobileNav = () => {
         </Link>
 
         <div className="mt-6">
-          <NavContent />
+          <NavContent closeSheet={closeSheet} />
           <div className="mt-6">
             <SignedOut>
               <div className="flex flex-col gap-3">
