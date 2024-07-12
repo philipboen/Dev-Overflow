@@ -63,3 +63,16 @@ export const formatNumber = (num: number): string => {
     return num.toString()
   }
 }
+
+export const getActualTheme = (theme: string): string => {
+  if (theme === 'light') {
+    return 'light';
+  } else if (theme === 'dark') {
+    return 'dark';
+  } else if (theme === 'system') {
+    // Check if the system prefers a dark theme
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  } else {
+    return theme;
+  }
+};
