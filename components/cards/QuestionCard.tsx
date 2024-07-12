@@ -65,7 +65,7 @@ const QuestionCard = ({
           title={` - asked ${getTimestamp(createdAt)}`}
           href={`/profile/${author._id}`}
           isAuthor
-          textStyles="xs-medium text-dark400_light600"
+          textStyles="xs-medium max-sm:text-dark400_light600 text-dark-180 dark:text-light-700"
         />
         <div className="flex gap-4">
           <Metric
@@ -73,21 +73,21 @@ const QuestionCard = ({
             alt="upvotes"
             value={formatNumber(upvotes)}
             title="Votes"
-            textStyles="xs-medium text-dark400_light600"
+            textStyles="xs-medium max-sm:text-dark400_light600 text-dark-180 dark:text-light-700"
           />
           <Metric
             imgUrl="/assets/icons/message.svg"
             alt="message"
             value={answers.length}
             title="Answers"
-            textStyles="xs-medium text-dark400_light600"
+            textStyles="xs-medium max-sm:text-dark400_light600 text-dark-180 dark:text-light-700"
           />
           <Metric
             imgUrl="/assets/icons/eye.svg"
             alt="eye"
             value={formatNumber(views)}
             title="Views"
-            textStyles="xs-medium text-dark400_light600"
+            textStyles="xs-medium max-sm:text-dark400_light600 text-dark-180 dark:text-light-700"
           />
         </div>
       </div>
