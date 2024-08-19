@@ -1,5 +1,3 @@
-const crypto = require("crypto");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -15,14 +13,14 @@ const nextConfig = {
     ],
   },
   async headers() {
-    const nonce = crypto.randomBytes(16).toString("base64");
     return [
       {
         source: "/(.*)", // Apply these headers to all routes
         headers: [
           {
             key: "Content-Security-Policy",
-            value: `default-src 'self'; script-src 'self' style-src 'self' 'nonce-${nonce}'`,
+            value:
+              "default-src 'self'; script-src 'self' style-src 'self' 'unsafe-inline",
           },
           {
             key: "Strict-Transport-Security",
