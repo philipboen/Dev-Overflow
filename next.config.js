@@ -42,14 +42,6 @@ const nextConfig = {
             value:
               "accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(), encrypted-media=(), fullscreen=(self), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(self), usb=(), web-share=(), xr-spatial-tracking=(), clipboard-read=(), clipboard-write=(), gamepad=(), hid=(), idle-detection=(), interest-cohort=(), serial=(), unload=()",
           },
-          {
-            key: "Expect-CT",
-            value: 'max-age=86400, enforce"',
-          },
-          {
-            key: "Clear-Site-Data",
-            value: '"cache", "cookies", "storage", "executionContexts"',
-          },
         ],
       },
     ];
