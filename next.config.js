@@ -46,10 +46,6 @@ const nextConfig = {
             key: "Expect-CT",
             value: 'max-age=86400, enforce"',
           },
-          {
-            key: "Clear-Site-Data",
-            value: '"cache", "cookies", "storage", "executionContexts"',
-          },
         ],
       },
     ];
